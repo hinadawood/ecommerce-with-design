@@ -1,9 +1,16 @@
 .c-onlineshop-cart-overlay {
     position: fixed;
-    top: 0;
+    top: 70px;
     bottom: 0;
     right: 0;
     left: 0;
+    height: calc(100vh - 70px);
+    display: flex;
+
+    @media (min-width: 600px) {
+        justify-content: center;
+        align-items: center;
+    }
 
     .c-onlineshop-cart-modal {
         position: fixed;
@@ -15,7 +22,6 @@
         left: 0;
         right: 0;
         bottom: -400px;
-        // transform: translateY(-400px);
         transition: 500ms ease-in-out;
     
         display: flex;
@@ -23,12 +29,11 @@
         @media (min-width: 600px) {
             border-radius: 10px;
             width: 350px;
-            top:50%;
-            left: 50%;
+            top: unset;
+            left: unset;
             right: unset;
             bottom: unset;
-            transform: translate(-50%, -50%);
-            transition: none;
+            transform: none;
         }
     
         &-entry {

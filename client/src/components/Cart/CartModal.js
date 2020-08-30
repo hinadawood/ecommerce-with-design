@@ -19,11 +19,15 @@ const CartModal = (props) => {
 
     const dispatch = useDispatch();
 
-    const closeModal = () => {
+    const closeModal = (event) => {
+        window['xx'] = event.target;
+        if (event.target !== document.getElementsByClassName('c-onlineshop-cart-overlay')[0]) {
+            return;
+        }
         document.getElementsByTagName('body')[0].style.overflow = 'auto';
-        if (window.innerWidth <= 600 ) {
-            document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'translateY(400px)';
-            setTimeout(()=>{dispatch(displayCartModal(false)); document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'translate(-50%, -50%)';}, 500);
+        if (window.innerWidth <= 600) {
+            document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'none'; 
+            setTimeout(()=>{dispatch(displayCartModal(false));}, 500);
         } else {
             dispatch(displayCartModal(false));
         }
@@ -37,22 +41,22 @@ const CartModal = (props) => {
         }
         dispatch(updateCartTotal());
         document.getElementsByTagName('body')[0].style.overflow = 'auto';
-        if (window.innerWidth <= 600 ) {
-            document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'translateY(400px)';
-            setTimeout(()=>{dispatch(displayCartModal(false)); document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'translate(-50%, -50%)';}, 500);
+        if (window.innerWidth <= 600) {
+            document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'none'; 
+            setTimeout(()=>{dispatch(displayCartModal(false));}, 500);
         } else {
             dispatch(displayCartModal(false));
         }
       }
 
     return (
-        currentSelectedCartItem ? <div className="c-onlineshop-cart-overlay" style={{display: showModal? 'block' : 'none'}}>
+        currentSelectedCartItem ? <div className="c-onlineshop-cart-overlay" style={{display: showModal? 'flex' : 'none'}} onClick={(event) => closeModal(event)}>
             <div className="c-onlineshop-cart-modal">
                 <div className="c-onlineshop-cart-modal__close-btn">
                     <i onClick={closeModal} className="fa fa-times"></i>  
                 </div>
                 <div className="c-onlineshop-cart-modal-brand">
-                    {'Brand'}
+                    {currentSelectedCartItem.brand}
                 </div>
                 <div className="c-onlineshop-cart-modal-item-name c-onlineshop-cart-modal-entry">
                     {currentSelectedCartItem.name}

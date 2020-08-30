@@ -13,8 +13,8 @@ const Product = (props) => {
     dispatch(editItemInCart({...item, qnty: 1}));
     document.getElementsByTagName('body')[0].style.overflow = 'hidden';
     dispatch(displayCartModal(true)); 
-    if (window.innerWidth <= 600 ) {
-      setTimeout(()=>{document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'translateY(-400px)';}, 0);
+    if (window.innerWidth <= 600) {
+     setTimeout(()=>{document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'translateY(-400px)';}, 0);
     }
     dispatch(showAddToCartBtn(true));
   }
@@ -23,7 +23,7 @@ const Product = (props) => {
     dispatch(editItemInCart(selectedItems.find((item) => item.id === editCartItem.id)));
     document.getElementsByTagName('body')[0].style.overflow = 'hidden';
     dispatch(displayCartModal(true));
-    if (window.innerWidth <= 600 ) {
+    if (window.innerWidth <= 600) {
       setTimeout(()=>{document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'translateY(-400px)';}, 0);
     }
     dispatch(showAddToCartBtn(false));
