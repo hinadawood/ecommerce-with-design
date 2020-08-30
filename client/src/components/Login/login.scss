@@ -1,0 +1,40 @@
+.c-login-panel {
+  width: 100%;
+  flex: 1 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+
+  &-form {
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  &__submit-btn {
+    display: flex;
+    justify-content: center;
+
+    button {
+      color: #fff;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 5px;
+      background-color: #00957d;
+      border-color: #00957d;
+  
+      &:focus {
+        box-shadow: 0 0 0 0.2rem #00ccaa ;
+      }
+    }
+  }
+
+  &__error-message {
+    color: red;
+    display: flex;
+    justify-content: center;
+  }
+}
+

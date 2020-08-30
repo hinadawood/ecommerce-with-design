@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot testing should render correctly by comparing snapshot 1`] = `
+<div
+  className="c-login-panel"
+>
+  <form
+    className="c-login-panel-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className="form-label"
+      >
+        User name:
+      </label>
+      <input
+        className="form-control"
+        name="username"
+        onChange={[Function]}
+        placeholder="Enter your user name"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="form-label"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        name="password"
+        onChange={[Function]}
+        placeholder="Enter your password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="c-login-panel__submit-btn"
+    >
+      <button
+        className="btn btn-success"
+        disabled={false}
+        type="submit"
+      >
+        Sign In
+      </button>
+    </div>
+  </form>
+</div>
+`;

@@ -1,0 +1,105 @@
+.c-onlineshop-cart-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    .c-onlineshop-cart-modal {
+        position: fixed;
+        border: 1px solid #f0f0f0;
+        background-color: white;
+        border-radius: 10px 10px 0 0;
+        padding: 20px;
+        top: unset;
+        left: 0;
+        right: 0;
+        bottom: -400px;
+        // transform: translateY(-400px);
+        transition: 500ms ease-in-out;
+    
+        display: flex;
+        flex-flow: column nowrap;
+        @media (min-width: 600px) {
+            border-radius: 10px;
+            width: 350px;
+            top:50%;
+            left: 50%;
+            right: unset;
+            bottom: unset;
+            transform: translate(-50%, -50%);
+            transition: none;
+        }
+    
+        &-entry {
+            margin: 15px 0;
+        }
+    
+        &__close-btn {
+            font-size: 1.75rem;
+            display: none;
+            justify-content: flex-end;
+        }
+
+        &-brand {
+            font-size: 0.75rem;
+            color: gray;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        &-item-name {
+            margin-top: 5px;
+            font-size: 1.5rem;
+        }
+    
+        &-subtotal {
+            border-top: 1px solid lightgrey;
+            border-bottom: 1px solid lightgrey;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            &__value {
+                font-size: 1.25rem;
+                font-weight: 700;
+                &::before {
+                    content: '$';
+                }
+            }
+        }
+    
+        &-btn-panel {
+    
+            .c-onlineshop-cart-modal__add-btn {
+                border-radius: 5px;
+                color: #fff;
+                background-color: #00957d;
+                border-color: #00957d;
+                width: 100%;
+            
+                &:hover {
+                  color: #fff;
+                }
+            
+                &:focus {
+                  box-shadow: 0 0 0 0.2rem #00ccaa ;
+                }
+            }
+
+            .c-onlineshop-cart-modal__edit-btn {
+                border-radius: 5px;
+                color: #00957d;
+                border-color: #00957d;
+                width: 100%;
+            
+                &:hover {
+                  color: #00957d;
+                }
+            
+                &:focus {
+                  box-shadow: 0 0 0 0.2rem #00ccaa ;
+                }
+            }
+        }
+    }
+}
