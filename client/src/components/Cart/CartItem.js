@@ -22,7 +22,7 @@ const CartItem = (props) => {
             <i onClick={deleteItem} className="fa fa-times icon c-onlineshop-cart-item__close-icon"></i>  
             <div className="c-onlineshop-cart-item-info">
                 <div className="c-onlineshop-cart-item-info-brand">
-                    {'brand'}
+                    {props.item.brand}
                 </div>
                 <div className="c-onlineshop-cart-item-info-summary">
                     <img className="c-onlineshop-cart-item-info-summary__image" 

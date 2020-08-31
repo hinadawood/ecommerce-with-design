@@ -20,10 +20,19 @@ const CartModal = (props) => {
     const dispatch = useDispatch();
 
     const closeModal = (event) => {
-        window['xx'] = event.target;
         if (event.target !== document.getElementsByClassName('c-onlineshop-cart-overlay')[0]) {
             return;
         }
+        document.getElementsByTagName('body')[0].style.overflow = 'auto';
+        if (window.innerWidth <= 600) {
+            document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'none'; 
+            setTimeout(()=>{dispatch(displayCartModal(false));}, 500);
+        } else {
+            dispatch(displayCartModal(false));
+        }
+    }
+
+    const cancelModal = (event) => {
         document.getElementsByTagName('body')[0].style.overflow = 'auto';
         if (window.innerWidth <= 600) {
             document.getElementsByClassName('c-onlineshop-cart-modal')[0].style.transform = 'none'; 
@@ -74,7 +83,7 @@ const CartModal = (props) => {
                 {
                     showAddToCartBtn ? 
                         <button className="c-onlineshop-cart-modal__add-btn btn" onClick={submitItem}>Add To Cart</button> :
-                        <button className="c-onlineshop-cart-modal__edit-btn btn" onClick={closeModal}>Cancel</button>
+                        <button className="c-onlineshop-cart-modal__edit-btn btn" onClick={cancelModal}>Cancel</button>
                 }
                 </div>
             </div>
